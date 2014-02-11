@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta class="viewport" content="width=device-width, initial-scale=1, maximun-scale=1"/>
+  <link rel="icon" type="image/png" href="{{STATIC_URL}}images/fiveicon3.png" />
+	<title>Quiniela PentaCampeón Aurinegra</title>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/estilos.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Loved+by+the+King' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+  <script>
+  $(function(){
+     
+                
+           $.ajax({
+             url : 'puntos/',
+             type : 'get',
+             success: function(data){
+              var html = data[0].fields.puntos
+              $('#puntosMenu').html(html)
+             }
+
+
+          });
+
+            
+
+          
+
+     
+  });
+  </script>
+</head>
+<body>
+  
+	<div class="navbar navbar-absolute-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img src="/static/images/five.png" id ="imgFive" alt="">
+          <img src="{{STATIC_URL}}images/five.png" id ="imgFive" alt="">
+          <img src="{{STATIC_URL}}images/five.png" id ="imgFive" alt="">
+          <img src="{{STATIC_URL}}images/five.png" id ="imgFive" alt="">
+          <img src="{{STATIC_URL}}images/five.png" id ="imgFive" alt="">
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="/">Inicio</a></li>
+            <li ><a href="https://www.facebook.com/groups/163409167068249/"><span id="grupo" class="label label-primary">Grupo</span></a></li>
+            <li ><a href="https://twitter.com/HenryGBC"><span id="twitter" class="label label-info">@HenryGBC</span></a></li>
+           {% if user.is_authenticated %}  
+            <li><a href="/">Enviar Partidos</a></li>
+            <li ><a href="#">Tabla General</a></li>
+            <li >
+              <a href="#">   
+                
+                <span id="puntosMenu" class="badge pull-right"></span>
+                Puntos
+
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+          {% if user.is_authenticated %}
+          <div class="userIni navbar-right">
+          <span ><strong>Bienvenido:</strong>{{user.username|capfirst}}</span>
+
+          <a href="/cerrar/" class="btn btn-danger">Salir</a>
+          </div>
+          {% else %}
+
+               <form class="form-inline navbar-right navbar-form" role="form" method="POST">
+                  {% csrf_token %}
+      			  <div class="form-group">
+      			    <label class="sr-only" for="username">Username</label>
+      			    <input type="text" class="form-control user" id="usuario" name="username" placeholder="Username">
+      			  </div>
+      			  <div class="form-group">
+      			    <label class="sr-only" for="password">Password</label>
+      			    <input type="password" name ="password" class="form-control" id="password" placeholder="Password">
+      			  </div>
+      			  <input type="submit" class="btn btn-success" Value="Ingresar"/>
+      			</form>
+             <a href="/registro/" id ="btnRegistrar" class="btn btn-primary">Registrarme</a>
+            
+          {% endif %}
+          
+       </div><!-- /.nav-collapse -->
+		
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+  
+  <section id="dashboard">
+  {% if user.is_authenticated %}  
+     
+      
+      <div class="menuCentral" >
+          <a href="/mispartidos/">
+           <div class = "menuppal" id="enviar">
+            <span class="iconEnviar"></span>
+            <span><strong>Enviar/Ver</strong></span>
+            <span id="spnPronostico"><strong>Pronosticos</strong></span>
+           </div>
+           </a>
+           <a href="/posiciones/">
+           <div class = "menuppal" id="tabla">
+
+            <span class="iconTabla"></span>
+            <span><strong>Ver Tabla</strong></span>
+             
+           </div>
+           </a>
+           <a href="/pronosticos/">
+           <div class = "menuppal" id="estadisticas">
+            <span class="iconEst"></span>
+            <span><strong>Pronosticos de</strong></span>
+            <span id="spnPronostico"><strong>Todos</strong></span>
+             
+           </div>
+           </a>
+           {% ifequal user.username 'admin' %}
+           <a href="/administracion/">
+           <div class = "menuppal" id="estadisticas">
+            <span class="iconEst"></span>
+            <span><strong>Guardar resultados</strong></span>
+             
+           </div>
+           </a>
+           <a href="/vertabla/">
+           <div class = "menuppal" id="estadisticas">
+            <span class="iconEst"></span>
+            <span><strong>Calcular Tabla</strong></span>
+             
+           </div>
+           </a>
+           
+
+           
+
+          
+          {% endifequal %}
+
+        
+      </div>
+      {% block content %} {% endblock %}
+      
+  {% else %}
+
+     
+     
+      <img src="{{STATIC_URL}}images/five.png" id = "imagenRegistro" alt="">
+       <img src="{{STATIC_URL}}images/viejaescuela.jpg" id = "imagenRegistroD" alt="">
+       <button class="btn btn-danger btn-lg" id="pasos" role="button" data-toggle="modal" data-target="#pasosModal">Pasos para jugar la Gran Quiniela</button>
+        <a href=""><span id="git"></span></a>
+       <!--<div id="ismael">
+          <h4><span class= "label label-danger" id="publicidad">PUBLICIDAD</span></h4>
+          <span id="titulo"><strong>ISMAEL: De mi cocina a su casa</strong></span></br>
+          <span id="fechaM">Menú del domingo 16/02</span>></br>
+          <span id="plato">Pasta a la marinera..<a href="">ver mas</a></span>
+       </div>
+      -->
+        {% block registro %} {% endblock %}
+        
+        
+   {% endif %}
+   
+
+  </section>
+
+
+  <div  class="modal fade" id="pasosModal" tabindex="-1" role="dialog" aria-labelledby="pasosModalLabel" aria-hidden="true">
+                 <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header" id="pasosModalLabel" >
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h3 class="modal-title" >Pasos para jugar la Quiniela</h3>
+                        </div>
+                        <div class="modal-body">
+                             <ol>
+                              <li><strong>Registrarse: presiónando el boton <a href="/registro/" id ="btnRegistrarModal" class="btn btn-primary">Registrarme</a></strong></li>
+                              <li><strong>El "Username" debe ser claro.</strong></li>
+                              <li><strong>Luego de registrarte debes esperar la activación del usuario </strong></li>
+                              <li><strong>Dirigirse al <a href="https://www.facebook.com/groups/163409167068249/"><span id="grupoModal" class="label label-primary">Grupo</span></a> para avisar a <a href="#">@HenryGBC</a> para la activación</strong></li>
+                              <li><strong>Ingresar a la paágina y en "Pronosticos" ingresar los correspondientes de cada fecha, y a LIGAR</strong></li>
+                              <li><strong>Recuerda que debes estár al día con la quiniela, mas info en el grupo</strong></li>
+
+                            </ol>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                          
+                        </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+ </body>
+
+</html>

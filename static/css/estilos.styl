@@ -1,0 +1,549 @@
+@font-face {
+	font-family: 'iconos';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body
+	background #FFF
+	
+
+	#pasosModalLabel
+		background #333
+		color white
+		text-align center
+		padding 0.5em
+	#grupo
+		padding 0.8em 2em
+		width 200px
+		font-size 12px
+		&:after
+			font-family 'iconos'
+			position relative
+			left 10px
+			content '\e606'
+	#grupoModal
+		padding 0.5em 1em
+		width 200px
+		font-size 12px
+		&:after
+			font-family 'iconos'
+			position relative
+			left 5px
+			content '\e606'
+				
+	#twitter
+		padding 0.8em 2em
+		font-size 12px
+		&:after
+			font-family 'iconos'
+			position relative
+			left 10px
+			content '\e604'
+			
+	.registro
+		position absolute
+		top 400px
+		left 0px
+	.userIni
+		color white
+		position relative
+		top 0px
+		left 0px
+		strong
+			margin-right 20px
+
+	#imgFive
+		height 50px
+
+	#dashboard
+		width 100%
+		position relative
+
+		.pronosticosTodos
+			
+			#listUsuarios
+				height 400px
+				overflow scroll
+			li
+				padding 0.5em
+				list-style none
+			
+			.listU
+				background #333
+				color white
+				cursor pointer
+				padding 0.5em
+				width 80%
+				&:hover
+					opacity 0.7
+
+			#fechaPro 
+				position relative
+				top -10px
+				left 40%
+				padding 0.5em
+				color white
+				font-size 20px
+			#avisoPro
+				position absolute
+				top 200px
+				left 0px
+				display inline-block
+				font-size 8px
+			.pronosticoUsuario
+				background-color rgba(0, 0, 0, 0.1)
+				border 2px solid black
+				border-radius 20px
+				h4
+					margin 0
+				#spnUser
+					font-size 16px
+					position relative
+					left 20%
+
+
+				.cerrarPro
+					color red
+					cursor pointer
+					font-size 18px
+					&:before
+						font-family 'iconos'
+						content '\e609'
+						position absolute
+						left 20px
+						
+							
+		#pasos
+			position relative
+			left 5%
+			top 300px
+
+		#ismael
+			position absolute
+			top 450px
+			left 37%
+			width 30%
+			border 0.5px solid
+			height 150px
+			background-color: rgba(0, 0, 0, 0.1);
+			box-shadow 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+			font-family: 'Loved by the King', cursive;
+			h4
+				background #333
+				margin 0
+				padding 0.2em
+				text-align center
+			#titulo
+				font-size 26px
+				position relative
+				left 20%
+			#fechaM
+				font-size 20px
+				
+
+
+		#equipos			
+			.resultado
+				width 50%
+				position relative
+				span
+					font-size 20px
+					width 80px
+					border 2px solid black
+					border-radius 20%
+
+		#imagenRegistroD
+			display none
+		#imagenRegistro
+			position absolute
+			left 100px
+		h3
+			position absolute
+			left 80px
+			top 280px
+		#btnRegistrar
+			position absolute
+			left 100px
+			top 350px
+		
+		.menuCentral
+			position absolute
+			left 30px
+			top 100px
+			a
+				text-decoration none
+				
+
+			.menuppal
+				width 200px
+				height 200px
+				border-radius 50%
+
+				
+				span
+					position relative
+					top 70px
+					left 50px
+				#spnPronostico
+					position relative
+					left 50px
+			#enviar
+				background-color #333
+				color white
+				position relative
+				top -50px
+				#spnPronostico
+					position absolute
+					right 40px
+					top 120px
+				span
+					position relative
+					left 10px
+				.iconEnviar
+					&:after
+						position relative
+						top -20px
+						left 70px
+						font-family 'iconos'
+						content '\e60b'
+						font-size 40px
+
+				
+
+
+			#tabla
+				background-color #f9f22e
+				color black
+				position relative
+				top -10px
+				span
+					position relative
+					left 30px
+				.iconTabla
+					&:after
+						position relative
+						top -20px
+						left 50px
+						font-family 'iconos'
+						content '\e60c'
+						font-size 40px
+
+				
+
+			#estadisticas
+				background-color #791313
+				color white
+				
+				span
+					position relative
+					left 10px
+				.iconEst
+					&:after
+						position relative
+						top -20px
+						left 70px
+						font-family 'iconos'
+						content '\e60d'
+						font-size 40px
+
+				
+
+
+
+		#resultadosJugador
+			width 100%
+			font-family: 'Hammersmith One', sans-serif;
+			font-size 20px
+			border 1px solid black
+			background-color: rgba(0, 0, 0, 0.1);
+			box-shadow 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+			.enviarbtn
+				width 50%
+				font-size 20px
+				position relative
+				left 80px
+			
+
+			#fecha
+				width 100%
+				background #333 
+				font-family: 'Hammersmith One', sans-serif;
+				h2
+					left 250px
+					margin 0
+					color white
+				#inicio
+					color white
+					font-size 16px
+			.alertForm
+				width 100%
+				position relative
+				top 0px
+				strong
+					position relative
+			#equipos
+				
+				.resultado
+					
+					input
+						height 31px
+						width 50px
+		
+		.tablaFecha
+				background-color: rgba(0, 0, 0, 0.1);
+				width 100%
+				position relative
+				top 20px
+				box-shadow 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+				
+
+
+				h2
+					font-size 20px
+					margin 0
+					background #333
+					color white
+				table
+					position relative
+					left 100px
+					top 0px
+					width 50%
+
+		.a_demo_two
+			 
+			    background-color #6fba26
+			    padding 10px
+			    position relative
+			    font-family  'Open Sans', sans-serif
+			    font-size 12px
+			    text-decoration none
+			    color #fff
+			    background-image  linear-gradient(bottom, rgb(100,170,30) 0%, rgb(129,212,51) 100%)
+			    box-shadow  inset 0px 1px 0px #b2f17f, 0px 6px 0px #3d6f0d
+			    border-radius  5px
+		
+	 
+		.a_demo_two:active 
+			
+			    top 7px
+			    background-image  linear-gradient(bottom, rgb(100,170,30) 100%, rgb(129,212,51) 0%)
+			    box-shadow  inset 0px 1px 0px #b2f17f, inset 0px -1px 0px #3d6f0d
+			    color  #156785
+			    text-shadow  0px 1px 1px rgba(255,255,255,0.3)
+			    background  rgb(44,160,202)
+
+		.enviar
+			position relative
+			top 10px
+		.borrar
+			background-color #e73438
+			box-shadow  inset 0px 1px 0px #b2f17f, 0px 6px 0px #a01317
+			position relative
+			left 10px
+			top 10px
+
+		
+
+@media screen and (min-width: 768px)
+	
+
+	body
+		background #FFF
+		
+		#btnRegistrar
+			position absolute
+			left 90%
+			top 8px
+		#alertRegistro
+			position absolute
+			top 500px
+			left 40%
+		.registro
+			position absolute
+			top 500px
+			left 30%
+		.userIni
+			color white
+			position relative
+			top 15px
+			left 100px
+		strong
+			margin-right 20px
+		#imgFive
+			height 50px
+
+		#dashboard
+			display inline-block
+			width 100%
+			.pronosticosTodos
+				#avisoPro
+					position absolute
+					top 200px
+					left 20%
+					padding 1em
+					font-size 22px
+			#pasos
+				position relative
+				left 40%
+				top 400px
+			#imagenRegistro
+				display none
+			#imagenRegistroD
+				display block
+				width 80%
+				position absolute
+				left 170px
+
+			h3
+				position absolute
+				left 48%
+				top 350px
+			
+
+			.menuCentral
+				position absolute
+				left 400px
+
+				
+					
+				#enviar
+					position relative
+					top -10px
+					right 60px
+					&:hover
+						opacity 0.8
+
+
+				#tabla
+					position relative
+					right 30px
+					top -10px
+					&:hover
+						opacity 0.8
+				#estadisticas
+					position relative
+					top -10px
+					&:hover
+						opacity 0.8
+				div
+					padding 0.5em
+				a
+					display inline-block
+
+				
+
+
+			#resultadosJugador
+				width 50%
+				font-family: 'Hammersmith One', sans-serif;
+				font-size 20px
+				border 1px solid black
+				position relative
+				left 80px
+				background-color: rgba(0, 0, 0, 0.1);
+				box-shadow 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+				
+				.enviarbtn
+					position relative
+					left 70%
+					width 25%
+					font-size 20px
+				#verificarEnvio
+					cursor pointer
+
+				#fecha
+					width 103%
+					background #333 
+					font-family: 'Hammersmith One', sans-serif;
+					position relative
+					right 20px
+					&:before
+						content ''
+						border-left 20px solid transparent
+						border-bottom 30px solid transparent
+						border-top 10px solid rgba(black,0.8)
+						position absolute
+						top 32px
+						width 2.5px
+						left 0px
+
+					h2
+						position relative
+						left 250px
+						margin 0
+						color white
+					#inicio
+						position absolute
+						top 0px
+						left 60%
+
+
+
+				#equipos
+					position relative
+					left 80px
+					top 20px
+
+					.partido
+						border-bottom 1px solid black
+						width 50%
+						span
+							padding 0.5em
+					.resultado
+						width 50%
+						position relative
+						left 50%
+						top -30px
+
+						input
+							width 50px
+							height 31px
+
+
+			#posiciones
+				width 50%
+				float right
+				position relative
+				top -300px
+			
+			.enviar
+				position relative
+				top -10px
+				left 30px
+				width 100px
+
+			.borrar
+				position relative
+				top -10px
+				left 50px
+
+			.tablaFecha
+				background-color: rgba(0, 0, 0, 0.1);
+				width 25%
+				position relative
+				top -900px
+				left 800px
+				height auto
+				box-shadow 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+				z-index 2
+
+
+				h2
+					font-size 20px
+					margin 0
+					background #333
+					color white
+				table
+					position relative
+					left 100px
+					top 0px
+					width 50%
+			.tablaFecha2
+				position relative
+				top -600px
+				left 800px

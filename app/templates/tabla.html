@@ -1,0 +1,76 @@
+{% extends 'inicio.html' %}
+{% block content %}
+<script>
+  $(function(){
+            $('.menuCentral').hide()
+            
+            $('#pruebaClick').on('click', function(e){
+              event.preventDefault();
+              debugger
+              
+            });
+
+            /*$('#registrarse').on('click', function(event){
+                event.preventDefault();
+                $('#alertReg').fadeIn("slow");
+                debugger;     
+                var email =  $('#campo_email').val();
+                $.ajax({
+                    data : {'email': email},
+                    url : 'email/',
+                    type : 'get',
+
+                });
+                $('#campo_email').val('');
+                        
+
+            });
+            /*$('.busqueda').hide()
+            
+            $('.bus').on('click', function(ev){
+                $('.busqueda').show()
+
+            });*/
+
+             
+
+    });
+</script>
+
+<article id ="resultadosJugador">
+        <div id = "fecha">
+        <h2>Tabla General</h2>
+        </div>
+        <table  class="table table-condensed" >
+                <thead>
+                    <tr>
+                      <th>Jugador</th>
+                      <th>Puntos</th>                 
+                    </tr>
+                </thead>
+                <tbody>
+                  <ul>
+                  {% for t in tabla %}
+                  {% ifequal t.usuario usuarioTabla %}
+                  <tr class="success">
+                  {% else %}
+                  <tr>
+                  {% endifequal %}
+                    <td><li>{{t.usuario}}</li></td>
+                    <td>{{t.puntos}}</td>
+                    
+                  </tr>
+                  
+                  {% endfor %}
+                  </ul>
+                </tbody>
+
+          </table>
+            
+</article>
+
+
+
+
+
+{% endblock %}

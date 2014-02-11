@@ -1,0 +1,111 @@
+@font-face{font-family:'iconos';src:url("../fonts/icomoon.eot?9ejjnd");src:url("../fonts/icomoon.eot?#iefix9ejjnd") format('embedded-opentype'),url("../fonts/icomoon.woff?9ejjnd") format('woff'),url("../fonts/icomoon.ttf?9ejjnd") format('truetype'),url("../fonts/icomoon.svg?9ejjnd#icomoon") format('svg');font-weight:normal;font-style:normal}
+body{background:#fff;}
+body #pasosModalLabel{background:#333;color:#fff;text-align:center;padding:.5em}
+body #grupo{padding:.8em 2em;width:200px;font-size:12px;}
+body #grupo:after{font-family:'iconos';position:relative;left:10px;content:'\e606'}
+body #grupoModal{padding:.5em 1em;width:200px;font-size:12px;}
+body #grupoModal:after{font-family:'iconos';position:relative;left:5px;content:'\e606'}
+body #twitter{padding:.8em 2em;font-size:12px;}
+body #twitter:after{font-family:'iconos';position:relative;left:10px;content:'\e604'}
+body .registro{position:absolute;top:400px;left:0}
+body .userIni{color:#fff;position:relative;top:0;left:0;}
+body .userIni strong{margin-right:20px}
+body #imgFive{height:50px}
+body #dashboard{width:100%;position:relative;}
+body #dashboard .pronosticosTodos #listUsuarios{height:400px;overflow:scroll}
+body #dashboard .pronosticosTodos li{padding:.5em;list-style:none}
+body #dashboard .pronosticosTodos .listU{background:#333;color:#fff;cursor:pointer;padding:.5em;width:80%;}
+body #dashboard .pronosticosTodos .listU:hover{opacity:.7}
+body #dashboard .pronosticosTodos #fechaPro{position:relative;top:-10px;left:40%;padding:.5em;color:#fff;font-size:20px}
+body #dashboard .pronosticosTodos #avisoPro{position:absolute;top:200px;left:0;display:inline-block;font-size:8px}
+body #dashboard .pronosticosTodos .pronosticoUsuario{background-color:rgba(0,0,0,0.1);border:2px solid #000;border-radius:20px;}
+body #dashboard .pronosticosTodos .pronosticoUsuario h4{margin:0}
+body #dashboard .pronosticosTodos .pronosticoUsuario #spnUser{font-size:16px;position:relative;left:20%}
+body #dashboard .pronosticosTodos .pronosticoUsuario .cerrarPro{color:#f00;cursor:pointer;font-size:18px;}
+body #dashboard .pronosticosTodos .pronosticoUsuario .cerrarPro:before{font-family:'iconos';content:'\e609';position:absolute;left:20px}
+body #dashboard #pasos{position:relative;left:5%;top:300px}
+body #dashboard #git{position:absolute;top:550px;left:90%;font-size:20px;color:#000;}
+body #dashboard #git:after{font-family:'iconos';content:'\e607'}
+body #dashboard #git:hover{opacity:.8}
+body #dashboard #ismael{position:absolute;top:450px;left:37%;width:30%;border:.5px solid;height:150px;background-color:rgba(0,0,0,0.1);box-shadow:5px 5px 5px 5px rgba(0,0,0,0.4);font-family:'Loved by the King',cursive;}
+body #dashboard #ismael h4{background:#333;margin:0;padding:.2em;text-align:center}
+body #dashboard #ismael #titulo{font-size:26px;position:relative;left:20%}
+body #dashboard #ismael #fechaM{font-size:20px}
+body #dashboard #equipos .resultado{width:50%;position:relative;}
+body #dashboard #equipos .resultado span{font-size:20px;width:80px;border:2px solid #000;border-radius:20%}
+body #dashboard #imagenRegistroD{display:none}
+body #dashboard #imagenRegistro{position:absolute;left:100px}
+body #dashboard h3{position:absolute;left:80px;top:280px}
+body #dashboard #btnRegistrar{position:absolute;left:100px;top:350px}
+body #dashboard .menuCentral{position:absolute;left:30px;top:100px;}
+body #dashboard .menuCentral a{text-decoration:none}
+body #dashboard .menuCentral .menuppal{width:200px;height:200px;border-radius:50%;}
+body #dashboard .menuCentral .menuppal span{position:relative;top:70px;left:50px}
+body #dashboard .menuCentral .menuppal #spnPronostico{position:relative;left:50px}
+body #dashboard .menuCentral #enviar{background-color:#333;color:#fff;position:relative;top:-50px;}
+body #dashboard .menuCentral #enviar #spnPronostico{position:absolute;right:40px;top:120px}
+body #dashboard .menuCentral #enviar span{position:relative;left:10px}
+body #dashboard .menuCentral #enviar .iconEnviar:after{position:relative;top:-20px;left:70px;font-family:'iconos';content:'\e60c';font-size:40px}
+body #dashboard .menuCentral #tabla{background-color:#f9f22e;color:#000;position:relative;top:-10px;}
+body #dashboard .menuCentral #tabla span{position:relative;left:30px}
+body #dashboard .menuCentral #tabla .iconTabla:after{position:relative;top:-20px;left:50px;font-family:'iconos';content:'\e608';font-size:40px}
+body #dashboard .menuCentral #estadisticas{background-color:#791313;color:#fff;}
+body #dashboard .menuCentral #estadisticas span{position:relative;left:10px}
+body #dashboard .menuCentral #estadisticas .iconEst:after{position:relative;top:-20px;left:70px;font-family:'iconos';content:'\e60d';font-size:40px}
+body #dashboard #resultadosJugador{width:100%;font-family:'Hammersmith One',sans-serif;font-size:20px;border:1px solid #000;background-color:rgba(0,0,0,0.1);box-shadow:5px 5px 5px 5px rgba(0,0,0,0.4);lilist-style-type:decimal;}
+body #dashboard #resultadosJugador .enviarbtn{width:50%;font-size:20px;position:relative;left:80px}
+body #dashboard #resultadosJugador #fecha{width:100%;background:#333;font-family:'Hammersmith One',sans-serif;}
+body #dashboard #resultadosJugador #fecha h2{left:250px;margin:0;color:#fff}
+body #dashboard #resultadosJugador #fecha #inicio{color:#fff;font-size:16px}
+body #dashboard #resultadosJugador .alertForm{width:100%;position:relative;top:0;}
+body #dashboard #resultadosJugador .alertForm strong{position:relative}
+body #dashboard #resultadosJugador #equipos .resultado input{height:31px;width:50px}
+body #dashboard .tablaFecha{background-color:rgba(0,0,0,0.1);width:100%;position:relative;top:20px;box-shadow:5px 5px 5px 5px rgba(0,0,0,0.4);}
+body #dashboard .tablaFecha h2{font-size:20px;margin:0;background:#333;color:#fff}
+body #dashboard .tablaFecha table{position:relative;left:100px;top:0;width:50%}
+body #dashboard .a_demo_two{background-color:#6fba26;padding:10px;position:relative;font-family:'Open Sans',sans-serif;font-size:12px;text-decoration:none;color:#fff;background-image:linear-gradient(bottom,#64aa1e 0%,#81d433 100%);box-shadow:inset 0 1px 0 #b2f17f,0 6px 0 #3d6f0d;border-radius:5px}
+body #dashboard .a_demo_two:active{top:7px;background-image:linear-gradient(bottom,#64aa1e 100%,#81d433 0%);box-shadow:inset 0 1px 0 #b2f17f,inset 0 -1px 0 #3d6f0d;color:#156785;text-shadow:0 1px 1px rgba(255,255,255,0.3);background:#2ca0ca}
+body #dashboard .enviar{position:relative;top:10px}
+body #dashboard .borrar{background-color:#e73438;box-shadow:inset 0 1px 0 #b2f17f,0 6px 0 #a01317;position:relative;left:10px;top:10px}
+@media screen and (min-width: 768px){body{background:#fff;}
+body #btnRegistrar{position:absolute;left:90%;top:8px}
+body #alertRegistro{position:absolute;top:500px;left:40%}
+body .registro{position:absolute;top:500px;left:30%}
+body .userIni{color:#fff;position:relative;top:15px;left:100px}
+body strong{margin-right:20px}
+body #imgFive{height:50px}
+body #dashboard{display:inline-block;width:100%;}
+body #dashboard .pronosticosTodos #avisoPro{position:absolute;top:200px;left:20%;padding:1em;font-size:22px}
+body #dashboard #pasos{position:relative;left:40%;top:400px}
+body #dashboard #imagenRegistro{display:none}
+body #dashboard #imagenRegistroD{display:block;width:80%;position:absolute;left:170px}
+body #dashboard h3{position:absolute;left:48%;top:350px}
+body #dashboard .menuCentral{position:absolute;left:400px;}
+body #dashboard .menuCentral #enviar{position:relative;top:-10px;right:60px;}
+body #dashboard .menuCentral #enviar:hover{opacity:.8}
+body #dashboard .menuCentral #tabla{position:relative;right:30px;top:-10px;}
+body #dashboard .menuCentral #tabla:hover{opacity:.8}
+body #dashboard .menuCentral #estadisticas{position:relative;top:-10px;}
+body #dashboard .menuCentral #estadisticas:hover{opacity:.8}
+body #dashboard .menuCentral div{padding:.5em}
+body #dashboard .menuCentral a{display:inline-block}
+body #dashboard #resultadosJugador{width:50%;font-family:'Hammersmith One',sans-serif;font-size:20px;border:1px solid #000;position:relative;left:80px;background-color:rgba(0,0,0,0.1);box-shadow:5px 5px 5px 5px rgba(0,0,0,0.4);}
+body #dashboard #resultadosJugador .enviarbtn{position:relative;left:70%;width:25%;font-size:20px}
+body #dashboard #resultadosJugador #verificarEnvio{cursor:pointer}
+body #dashboard #resultadosJugador #fecha{width:103%;background:#333;font-family:'Hammersmith One',sans-serif;position:relative;right:20px;}
+body #dashboard #resultadosJugador #fecha:before{content:'';border-left:20px solid transparent;border-bottom:30px solid transparent;border-top:10px solid rgba(0,0,0,0.8);position:absolute;top:32px;width:2.5px;left:0}
+body #dashboard #resultadosJugador #fecha h2{position:relative;left:250px;margin:0;color:#fff}
+body #dashboard #resultadosJugador #fecha #inicio{position:absolute;top:0;left:60%}
+body #dashboard #resultadosJugador #equipos{position:relative;left:80px;top:20px;}
+body #dashboard #resultadosJugador #equipos .partido{border-bottom:1px solid #000;width:50%;}
+body #dashboard #resultadosJugador #equipos .partido span{padding:.5em}
+body #dashboard #resultadosJugador #equipos .resultado{width:50%;position:relative;left:50%;top:-30px;}
+body #dashboard #resultadosJugador #equipos .resultado input{width:50px;height:31px}
+body #dashboard #posiciones{width:50%;float:right;position:relative;top:-300px}
+body #dashboard .enviar{position:relative;top:-10px;left:30px;width:100px}
+body #dashboard .borrar{position:relative;top:-10px;left:50px}
+body #dashboard .tablaFecha{background-color:rgba(0,0,0,0.1);width:25%;position:relative;top:-900px;left:800px;height:auto;box-shadow:5px 5px 5px 5px rgba(0,0,0,0.4);z-index:2;}
+body #dashboard .tablaFecha h2{font-size:20px;margin:0;background:#333;color:#fff}
+body #dashboard .tablaFecha table{position:relative;left:100px;top:0;width:50%}
+body #dashboard .tablaFecha2{position:relative;top:-600px;left:800px}
+}

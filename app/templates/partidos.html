@@ -1,0 +1,128 @@
+{% extends 'inicio.html' %}
+{% block content %}
+<script>
+  $(function(){
+            $('.menuCentral').hide()
+            
+            $('#enviar').on('click', function(e){
+              event.preventDefault();
+              debugger
+                {% for p in partidos %}
+                console.log("{{p.local}}")
+                console.log("{{p.visitante}}")
+                {% endfor %}
+            });
+
+            /*$('#registrarse').on('click', function(event){
+                event.preventDefault();
+                $('#alertReg').fadeIn("slow");
+                debugger;     
+                var email =  $('#campo_email').val();
+                $.ajax({
+                    data : {'email': email},
+                    url : 'email/',
+                    type : 'get',
+
+                });
+                $('#campo_email').val('');
+                        
+
+            });
+            /*$('.busqueda').hide()
+            
+            $('.bus').on('click', function(ev){
+                $('.busqueda').show()
+
+            });*/
+
+             
+
+    });
+</script>
+
+<article id ="resultadosJugador">
+        <h2>Fecha {{fechaJugada}}</h2>
+        
+        
+
+              <form method="post">
+                {% csrf_token %}
+               <div id ="equipos">
+                  <label for="">Fecha a Jugar</label>
+                  <input type="text" name ="fechaAJugar">    
+                 <div class="partidosAdmin">
+                  <label for="local1"><strong>Local</strong></label>
+                    <input type="text" name="local1" id="local1" />
+                    <label for="visitante1"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante1" id="visitante1" />
+                 </div>
+                         
+                 <div class="partidosAdmin">
+                  <label for="local2"><strong>Local</strong></label>
+                    <input type="text" name="local2" id="local2" />
+                    <label for="visitante2"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante2" id="visitante2" />
+                 </div>        
+                 <div class="partidosAdmin">
+                  <label for="local3"><strong>Local</strong></label>
+                    <input type="text" name="local3" id="local3" />
+                    <label for="visitante3"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante3" id="visitante3" />
+                 </div>        
+                 <div class="partidosAdmin">
+                  <label for="local4"><strong>Local</strong></label>
+                    <input type="text" name="local4" id="local4" />
+                    <label for="visitante4"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante4" id="visitante4" />
+                 </div>        
+                 <div class="partidosAdmin">
+                  <label for="local5"><strong>Local</strong></label>
+                    <input type="text" name="local5" id="local5" />
+                    <label for="visitante5"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante5" id="visitante5" />
+                 </div>        
+                 <div class="partidosAdmin">
+                  <label for="local6"><strong>Local</strong></label>
+                    <input type="text" name="local6" id="local6" />
+                    <label for="visitante6"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante6" id="visitante6" />
+                 </div>        
+                 <div class="partidosAdmin">
+                  <label for="local7"><strong>Local</strong></label>
+                    <input type="text" name="local7" id="local7" />
+                    <label for="visitante7"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante7" id="visitante7" />
+                 </div>        
+                 <div class="partidosAdmin">
+                  <label for="local8"><strong>Local</strong></label>
+                    <input type="text" name="local8" id="local8" />
+                    <label for="visitante8"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante8" id="visitante8" />
+                 </div>        
+                 <div class="partidosAdmin">
+                  <label for="local9"><strong>Local</strong></label>
+                    <input type="text" name="local9" id="local9" />
+                    <label for="visitante9"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante9" id="visitante9" />
+                 </div>        
+                 <div class="partidosAdmin">
+                  <label for="local1"><strong>Local</strong></label>
+                    <input type="text" name="local1" id="local1" />
+                    <label for="visitante1"><strong>Visitante</strong></label>
+                   <input type="text" name="visitante1" id="visitante1" />
+                 </div>
+
+  
+                 
+               </div>
+         
+          <input class= "btn btn-success" type="submit" value="Guardar" id="enviar">
+         </form>
+        
+      </article>
+
+
+
+
+</script>
+{% endblock %}

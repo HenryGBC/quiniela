@@ -1,0 +1,9 @@
+<!-- SHTML Wrapper - 404 Not Found -->
+<!--#exec cgi="/cgi-sys/fourohfour.cgi" -->
+<html><head><title>403 Permission Denied</title></head>
+<body bgcolor=white>
+<h1>Lo siento</h1>
+
+<h2>Tienes que esperar la activación</h2> <!--#echo var="REQUEST_URI" -->
+
+</body></html>

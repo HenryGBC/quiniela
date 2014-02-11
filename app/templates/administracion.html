@@ -1,0 +1,78 @@
+{% extends 'inicio.html' %}
+{% block content %}
+<script>
+  $(function(){
+            $('.menuCentral').hide()
+            
+            $('#enviar').on('click', function(e){
+              event.preventDefault();
+              debugger
+                {% for p in partidos %}
+                console.log("{{p.local}}")
+                console.log("{{p.visitante}}")
+                {% endfor %}
+            });
+
+            /*$('#registrarse').on('click', function(event){
+                event.preventDefault();
+                $('#alertReg').fadeIn("slow");
+                debugger;     
+                var email =  $('#campo_email').val();
+                $.ajax({
+                    data : {'email': email},
+                    url : 'email/',
+                    type : 'get',
+
+                });
+                $('#campo_email').val('');
+                        
+
+            });
+            /*$('.busqueda').hide()
+            
+            $('.bus').on('click', function(ev){
+                $('.busqueda').show()
+
+            });*/
+
+             
+
+    });
+</script>
+
+<article id ="resultadosJugador">
+        <h2>Fecha {{fechaJugada}}</h2>
+        
+        
+
+              <form method="post">
+                {% csrf_token %}
+               <div id ="equipos">
+                {% for p in partidos %}
+                 <div class="partido">
+                   <span id="local">{{p.local}}</span>
+                   <span>vs</span>
+                   <span id="visit">{{p.visitante}}</span>
+                  <span><strong>{{p.fechaPartido}}</strong></span>
+                 </div>
+                 
+                 <div class="resultado">
+                    <input type="number" name="{{p.sluglocal}}" id="{{p.sluglocal}}" />
+                   <input type="number" name="{{p.slugvisitante}}" id="{{p.slugvisitante}}" />
+                 </div>
+
+                {% endfor %}
+                 
+               </div>
+         
+          <input class= "btn btn-success" type="submit" value="Guardar" id="enviar">
+         </form>
+        
+      </article>
+      
+
+
+
+
+</script>
+{% endblock %}

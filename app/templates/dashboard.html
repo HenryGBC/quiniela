@@ -1,0 +1,174 @@
+{% extends 'inicio.html' %}
+{% block content %}
+<script>
+  $(function(){
+            $('.menuCentral').hide()
+            $('#enviarResultados').hide();
+            $('#alertFecha').hide();
+            $('#alertFechaBien').hide();
+       
+           
+            $('#verificarEnvio').on('click', function(e){
+              
+                $('#alertFecha').hide();
+                verificar= true;
+
+                  {% for p in partidos %}
+                    local = $("#{{p.sluglocal}}").val()
+                    if(!local)
+                    {
+                      
+                      verificar = false;
+                    }
+                    visitante = $("#{{p.slugvisitante}}").val()
+                    if(!visitante)
+                    {
+                      
+                      verificar = false;
+                    }
+                    
+                  {% endfor %}
+                  if(verificar)
+                  {
+                    $('#verificarEnvio').hide();
+                    $('#alertFechaBien').show();
+                    $('#enviarResultados').show();
+                    
+                  }else{
+                    $('#alertFecha').show();
+                  }
+                
+            });
+          
+             
+
+    });
+</script>
+
+<article id ="resultadosJugador">
+        <div id = "fecha">
+        <h2>Fecha {{fechaJugada}}</h2>
+        <span class="label label-danger" id="inicio">Inicia {{fechaObject.fechaInicio}}</span>
+        </div>
+        
+       
+
+            {% if fg %}
+
+            
+              <div id ="equipos">
+                {% for r in resultados %}
+               <div class="partido">
+                 <span id="local">{{r.local}}</span>
+                 <span>vs</span>
+                 <span id="visit">{{r.visitante}}</span>
+               </div>
+               
+               <div class="resultado">
+                  <span><strong>{{r.marcadorLocal}}</strong></span>
+                  <span><strong>{{r.marcadorVisitante}}</strong></span>
+               </div>
+           
+
+            {% endfor %}
+
+               
+             </div>
+              <a href="/" class="btn btn-primary ">Volver</a>
+            
+             {% else %}
+
+              <form method="post">
+                {% csrf_token %}
+               <div id ="equipos">
+                {% for p in partidos %}
+                 <div class="partido">
+                   <span id="local">{{p.local}}</span>
+                   <span>vs</span>
+                   <span id="visit">{{p.visitante}}</span>
+                  <span><strong>{{p.fechaPartido}}</strong></span>
+                 </div>
+                 
+                 <div class="resultado">
+                    <input type="number" name="{{p.sluglocal}}" id="{{p.sluglocal}}" />
+                   <input type="number" name="{{p.slugvisitante}}" id="{{p.slugvisitante}}" />
+                 </div>
+
+                {% endfor %}
+                 
+               </div>
+          {% if not usuarioMoroso.moroso and not desactivar %}
+          
+          
+          <div id = "alertFecha" class="btn btn-danger alert-dismissable alertForm">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+            &times;
+          </button>
+           <strong>Hay un campo vacio, revisa, gracias</strong> 
+          </div>
+          <div id = "alertFechaBien" class="btn btn-success alert-dismissable alertForm">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+            &times;
+          </button>
+           <strong>Verifica tus resultados y vuelve a presionar "ENVIAR".</strong> 
+          </div>
+          <div class="btn btn-success enviarbtn" id="verificarEnvio">Enviar</div>
+          <input class= "btn btn-success enviarbtn" type="submit" value="Enviar" id="enviarResultados" />
+           
+      
+          {% else %}
+            {% if usuarioMoroso.moroso %}
+            <div ="moroso">
+             <span><strong>MOROSO. Comunicarse con la gerencia</strong></span>
+           </div>
+           {% endif %}
+           {% if desactivar %}
+            <div ="moroso">
+             <span><strong>La fecha ya comenzó</strong></span>
+           </div>
+           {% endif %}
+          {% endif %}
+         </form>
+        {% endif %}
+       
+      </article>
+{% if fg %}
+<article class ="tablaFecha tablaFecha2">
+{% else %}
+<article class ="tablaFecha">
+{% endif %}
+
+        <h2>Tabla de posiciones de la Fecha {{fechaJugada}}</h2>
+        <table class="table table-condensed" >
+                <thead>
+                    <tr>
+                      <th>Jugador</th>
+                      <th>Puntos</th>                 
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for t in tablafecha %}
+                    
+                    {% for d in dicUsuario%}
+
+                      {% ifequal t.usuario d %}
+         
+                        {% ifequal t.usuario usuarioTabla %}
+                        <tr class="success">
+                        {% else %}
+                        <tr>
+                        {% endifequal %}
+                          <td><strong>{{t.usuario}}</strong></td>
+                          <td>{{t.puntos}}</td>   
+                        </tr>
+                      {% endifequal %}
+                  {% endfor %}
+
+                 {% endfor %}
+                </tbody>
+
+          </table>
+       
+</article>
+
+{% endblock %}

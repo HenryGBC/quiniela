@@ -1,0 +1,77 @@
+{% extends 'inicio.html' %}
+{% block content %}
+<script>
+  $(function(){
+  			{% for d in dicUsuario%}
+  			 $('#{{d}}-{{fechaJugada}}').hide()
+  			 $('#{{d}}').on('click', function(e){
+  			 	$('#{{d}}-{{fechaJugada}}').fadeIn()
+  			 });
+  			 $('#{{d}}cerrar').on('click', function(e){
+  			 	$('#{{d}}-{{fechaJugada}}').fadeOut()
+  			 });
+  			
+  			{% endfor %}
+  			$('.menuCentral').hide()
+  			
+  			 
+
+  	  });
+</script>
+<article class="pronosticosTodos">
+	<span class="label label-danger" id="fechaPro"><strong>FECHA {{fechaJugada}}</strong></span>
+
+	{% if not activarPronostico %}
+		<span class="label label-danger" id="avisoPro"><strong>TODAVÍA NO PUEDES VER HASTA QUE NO COMIENCE LA FECHA</strong></span>
+	{% else %}
+	
+	
+	<div class="row">
+		<div class="col-xs-6 col-sm-3" id="listUsuarios">
+		<ul>
+			{% for d in dicUsuario%}
+			<li><div class="listU"id="{{d}}">
+				<span>{{d}}</span>
+				<input type="hidden" name="{{d}}" id="p" value="{{d}}">
+				</div>
+			</li>
+			{% endfor %}
+			
+
+
+		</ul>
+		</div>
+		{% for d in dicUsuario%}
+
+
+			<div class="col-xs-6 col-sm-3 pronosticoUsuario" id ="{{d}}-{{fechaJugada}}">
+		       <span class="cerrarPro" id="{{d}}cerrar"></span>
+		       <span class="label label-warning" id="spnUser"><strong>{{d}}</strong></span>
+		       
+		       {% for r in resultados %}
+		       {% ifequal d r.usuario%}
+
+		        <div class="partido">
+		            <span id="local">{{r.local}}</span>
+		            <span>vs</span>
+		            <span id="visit">{{r.visitante}}</span>
+		       </div>
+		               
+		        <div class="resultado">
+		    	   <span><strong>{{r.marcadorLocal}}</strong></span>
+		    	   <span><strong>-</strong></span>
+                  <span><strong>{{r.marcadorVisitante}}</strong></span>
+		        </div>
+		        
+		        {% endifequal %}
+				{% endfor %}
+			 </div> <!-- finaliza el pronosticoUsuario-->
+		
+		{% endfor %}
+
+ 	</div><!--finaliza el row-->
+{% endif %}
+</article>
+
+
+{% endblock %}
